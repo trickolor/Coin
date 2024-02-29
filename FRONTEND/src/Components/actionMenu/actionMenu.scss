@@ -1,0 +1,174 @@
+.action-menu__container {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    flex-basis: 100%;
+  
+    @media (max-width: 1440px) {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+  
+  .action-menu__title {
+    margin: 0;
+    margin-right: 35px;
+    user-select: none;
+
+    @media (max-width: 900px) {
+        margin: 0;
+    }
+  }
+  
+  .action-menu__select-container {
+    width: 300px;
+    margin-right: auto;
+    user-select: none;
+
+    @media (max-width: 900px) {
+        margin: 0;
+    }
+  }
+  
+  .action-menu__option-current,
+  .action-menu__option {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #374151;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  
+  .action-menu__option {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #A0C3FF;
+    }
+  
+    &:focus {
+      background-color: #06478c;
+      color: #FFFFFF;
+    }
+  
+    &--active::after {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      content: '';
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url('../../images/selectMark.svg');
+    }
+  }
+  
+  .action-menu__option-current {
+    position: relative;
+    background-color: #FFFFFF;
+    border: 1px solid #116ACC;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background: rgba(160, 195, 255, 0.05);
+      border: 1px solid #116ACC;
+    }
+  
+    &:focus {
+      background: rgba(160, 195, 255, 0.1);
+      border: 1px solid #116ACC;
+    }
+  
+    &::after {
+      position: absolute;
+      top: 19.5px;
+      right: 23px;
+      content: '';
+      display: block;
+      width: 10px;
+      height: 5px;
+      background-image: url('../../images/selectArrow.svg');
+      background-position: center center;
+    }
+  
+    &--active::after {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .action-menu__options-container {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 300px;
+    padding: 10px 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+  
+    &--active {
+      animation-name: optionsContainerAnimation;
+      animation-duration: 0.3s;
+      display: block;
+    }
+  }
+  
+  .action-menu__button {
+    position: relative;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    padding: 16px 24px 16px 58px;
+    background-color: #116ACC;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #5394d9;
+    }
+  
+    &:focus {
+      background-color: #06478c;
+    }
+  
+    &::after {
+      position: absolute;
+      top: 14px;
+      left: 24px;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('../../images/buttonPlus.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  @keyframes optionsContainerAnimation {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  

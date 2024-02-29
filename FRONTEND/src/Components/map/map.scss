@@ -1,0 +1,34 @@
+#map__container {
+    width: 100%;
+    height: 600px;
+    padding-bottom: 50px;
+  
+    @media (max-width: 1440px) {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  
+    @media (max-width: 900px) {
+      max-width: 578px;
+    }
+  
+    @media (max-width: 650px) {
+      max-width: 320px;
+    }
+  }
+  
+  .map__title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 50px 0;
+  
+    @media (max-width: 1440px) {
+      text-align: center;
+    }
+  }
+  

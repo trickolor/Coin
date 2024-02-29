@@ -1,0 +1,127 @@
+.account-info__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: 100%;
+    width: 1340px;
+    row-gap: 24px;
+    padding-top: 50px;
+  
+    @media (max-width: 1440px) {
+      max-width: 768px;
+    }
+  
+    @media (max-width: 900px) {
+      max-width: 576px;
+    }
+  
+    @media (max-width: 650px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: fit-content;
+    }
+  }
+  
+  .account-info__title {
+    display: block;
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    flex-basis: calc(100% - 210px);
+    margin: 0;
+    
+    @media (max-width: 650px) {
+      font-size: 25px;
+    }
+  }
+  
+  .account-info__back-button {
+    position: relative;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    flex-basis: 210px;
+    width: fit-content;
+    padding: 16px 24px 16px 58px;
+    background-color: #116ACC;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #5394d9;
+    }
+  
+    &:focus {
+      background-color: #06478c;
+    }
+  
+    &::after {
+      position: absolute;
+      top: 14px;
+      left: 24px;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('../../images/goBackArrow.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  
+    @media (max-width: 650px) {
+      flex-basis: auto;
+      order: 4;
+    }
+  }
+  
+  .account-info__number {
+    display: block;
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    flex-basis: calc(100% - 210px);
+    margin: 0;
+
+    @media (max-width: 900px) {
+        font-size: 25px;
+    }
+  
+    @media (max-width: 650px) {
+      font-size: 20px;
+    }
+  }
+  
+  .account-info__balance-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 210px;
+    gap: 10px;
+  
+    @media (max-width: 650px) {
+      flex-basis: auto;
+    }
+  }
+  
+  .account-info__balance-title,
+  .account-info__balance-sum {
+    display: block;
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+  
+  

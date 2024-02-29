@@ -1,0 +1,253 @@
+@keyframes containerAnimation {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes dragAnimation1 {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dragAnimation2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.main {
+    position: relative;
+    max-width: 1330px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    @media (max-width: 1440px) {
+        max-width: 768px;
+    }
+
+    @media (max-width: 900px) {
+        max-width: 576px;
+    }
+
+    @media (max-width: 650px) {
+        max-width: 320px;
+    }
+}
+
+.response-info {
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    padding: 15px;
+    color: #FFFFFF;
+    background-color: #116ACC;
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+}
+
+.drag {
+    width: 35px;
+    height: 35px;
+    background-color: #116ACC;
+    background-image: url('../../images/move.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    display: none;
+    animation: dragAnimation1 0.2s;
+    transition: all 0.3s ease-in-out;
+}
+
+.drag:hover {
+    background-color: #06478c;
+}
+
+.drag:active {
+    background-color: #116ACC;
+}
+
+.drag--active {
+    display: block;
+}
+
+.drag--selected {
+    outline: 3px solid #116ACC;
+    cursor: move;
+
+}
+
+.drag--force-hidden {
+    display: none;
+}
+
+.drag--available {
+    animation: dragAnimation2 1.5s infinite;
+}
+
+.auth-page__container {
+    position: relative;
+    height: calc(100vh - 106px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-page__login-container {
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 85px 50px 115px;
+    background-color: #F3F4F6;
+    border-radius: 50px;
+
+    @media (max-width: 650px) {
+        padding: 25px;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+.auth-page__title {
+    display: block;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 35px;
+
+    @media (max-width: 650px) {
+        text-align: center;
+        font-size: 25px;
+    }
+}
+
+.auth-page__input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.auth-page__input-title {
+    position: absolute;
+    left: -60px;
+    top: 13px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #182233;
+
+    @media (max-width: 650px) {
+        left: 0;
+        top: -30px;
+    }
+}
+
+.auth-page__input {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #6B7280;
+    padding: 10px 10px 10px 16px;
+    width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #9CA3AF;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+
+    @media (max-width: 650px) {
+        max-width: 200px;
+    }
+}
+
+.auth-page__input:hover {
+    background: rgba(160, 195, 255, 0.05);
+    border: 1px solid #116ACC;
+}
+
+.auth-page__input:focus {
+    outline: none;
+    background: rgba(160, 195, 255, 0.1);
+    border: 1px solid #116ACC;
+}
+
+.invalid-input {
+    border-color: red;
+}
+
+.auth-page__button {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin-top: 5px;
+    padding: 14px 21px;
+    width: fit-content;
+    background-color: #116ACC;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #5394d9;
+    }
+
+    &:focus {
+        background-color: #06478c;
+    }
+}

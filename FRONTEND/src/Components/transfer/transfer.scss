@@ -1,0 +1,260 @@
+@keyframes containerAnimation {
+    from {
+        transform: scale(1, 0);
+        z-index: 10;
+    }
+
+    to {
+        transform: scale(1, 1);
+        z-index: 10;
+    }
+}
+
+.transfer__container {
+    position: relative;
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 25px 50px;
+    background-color: #F3F4F6;
+    border-radius: 50px;
+    gap: 25px;
+
+    @media (max-width: 1440px) {
+        padding: 25px 143px;
+    }
+
+    @media (max-width: 900px) {
+        padding: 25px 46px;
+    }
+
+    @media (max-width: 650px) {
+        max-width: 280px;
+        align-items: center;
+        padding: 30px 68.2px;
+        border-radius: 15px;
+    }
+}
+
+.transfer__title {
+    display: block;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    width: fit-content;
+    margin: 0;
+
+    @media (max-width: 1440px) {
+        align-self: center;
+    }
+}
+
+.transfer__input-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
+}
+
+.transfer__input-title {
+    display: block;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #182233;
+}
+
+.transfer__input {
+    display: block;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #6B7280;
+    width: 268px;
+    padding: 10px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #9CA3AF;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+    appearance: none;
+    -moz-appearance: textfield;
+
+    &:hover {
+        background-color: rgba(160, 195, 255, 0.05);
+        border: 1px solid #116ACC;
+    }
+
+    &:focus {
+        outline: none;
+        background-color: rgba(160, 195, 255, 0.1);
+        border: 1px solid #116ACC;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &.transfer__input-special {
+        position: relative;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 23px) center;
+        background-image: url('../../images/selectArrowDown.svg');
+
+        &--active {
+            background-image: url('../../images/selectArrow.svg');
+        }
+
+        &--visa {
+            background-image: url('../../images/visa.png');
+            background-size: 30px 30px;
+        }
+
+        &--mir {
+            background-image: url('../../images/mir.png');
+            background-size: 30px 18px;
+        }
+
+        &--mir {
+            background-image: url('../../images/mastercard.png');
+            background-size: 30px 25px;
+        }
+    }
+
+    @media (max-width: 650px) {
+        max-width: 150px;
+    }
+}
+
+.transfer__button {
+    position: relative;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 16px 24px 16px 58px;
+    background-color: #116ACC;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &--disabled {
+        background-color: #9CA3AF;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: #5394d9;
+    }
+
+    &:focus {
+        background-color: #06478c;
+    }
+
+    &::after {
+        position: absolute;
+        top: 14px;
+        left: 24px;
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url('../../images/buttonMail.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
+
+.transfer__button-pseudo {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    padding: 0;
+    border: none;
+    width: 45.6px;
+    height: 45.6px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.transfer__account-list {
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 46px;
+    list-style: none;
+    margin: 0;
+    display: none;
+    z-index: 10;
+    width: 300px;
+    padding: 10px 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+
+    &--active {
+        display: block;
+
+        @media (max-width: 650px) {
+            width: 100%;
+            top: 85px;
+        }
+    }
+
+    .transfer__account-list-item {
+        display: block;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        color: #6B7280;
+        width: 268px;
+        padding: 10px 16px;
+        background-color: #FFFFFF;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #A0C3FF;
+        }
+
+        &:focus {
+            background-color: #06478c;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 650px) {
+            width: 150px;
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.currency-rate__wrapper {
+  border-radius: 50px;
+  width: calc(50% - 25px);
+  padding: 50px;
+  padding-bottom: 80px;
+  background-color: #E5E5E5;
+  height: 1050px;
+
+  @media (max-width: 1440px) {
+    overflow: hidden;
+    height: 550px;
+    width: 668px;
+  }
+
+  @media (max-width: 900px) {
+    width: 478px;
+  }
+
+  @media (max-width: 650px) {
+    border-radius: 0;
+    width: 280px;
+    padding: 50px 20px;
+  }
+}
+
+.currency-rate__container {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  @media (max-width: 1440px) {
+    height: 500px;
+    overflow: hidden;
+  }
+}
+
+.currency-rate__title {
+  display: block;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 25px;
+
+  @media (max-width: 1440px) {
+    text-align: center;
+  }
+}
+
+.currency-rate__list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: fit-content;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 1440px) {
+    margin: 0 auto;
+  }
+}
+
+.currency-rate__list-item {
+  display: flex;
+  align-items: flex-end;
+  width: 560px;
+
+  @media (max-width: 900px) {
+    max-width: 300px;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 240px;
+  }
+}
+
+.currency-rate__pair,
+.currency-rate__value {
+  display: block;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  color: #000000;
+  width: fit-content;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+  }
+}
+
+.currency-rate__pos-dots,
+.currency-rate__neg-dots {
+  flex-grow: 1;
+  border-bottom: 1px dashed;
+}
+
+.currency-rate__pos-dots {
+  border-color: #76CA66;
+}
+
+.currency-rate__neg-dots {
+  border-color: #FD4E5D;
+}
+
+.currency-rate__pos-indicator,
+.currency-rate__neg-indicator {
+  width: 20px;
+  height: 23px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.currency-rate__pos-indicator {
+  background-image: url('../../images/inc.svg');
+}
+
+.currency-rate__neg-indicator {
+  background-image: url('../../images/dec.svg');
+}

@@ -1,0 +1,16 @@
+.account-list-page__container {
+    justify-content: center;
+    display: flex;
+    column-gap: 65px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+  
+    @media (max-width: 1440px) {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  
+    @media (max-width: 900px) {
+      max-width: 576px;
+    }
+  }

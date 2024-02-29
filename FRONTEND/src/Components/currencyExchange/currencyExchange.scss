@@ -1,0 +1,246 @@
+.currency-exchange__container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 25px;
+    width: calc(100% - 100px);
+    flex-basis: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    padding: 50px;
+
+    @media (max-width: 1440px) {
+        justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+        max-width: 476px;
+    }
+
+    @media (max-width: 650px) {
+        border-radius: 0;
+
+        .currency-exchange__currency-input-box {
+            flex-direction: column;
+            width: fit-content;
+        }
+
+        .currency-exchange__sum-input-box {
+            flex-direction: column;
+        }
+
+        .currency-exchange__sum-input {
+            width: 100px;
+        }
+    }
+}
+
+.currency-exchange__title {
+    display: block;
+    flex-basis: 100%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    width: fit-content;
+    margin: 0;
+}
+
+.currency-exchange__box-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.currency-exchange__currency-input-box,
+.currency-exchange__sum-input-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.currency-exchange__currency-input-span,
+.currency-exchange__sum-input-title,
+.currency-exchange__sum-input {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #000000;
+}
+
+.currency-exchange__sum-input {
+    width: 268px;
+    padding: 10px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #9CA3AF;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: rgba(160, 195, 255, 0.05);
+        border: 1px solid #116ACC;
+    }
+
+    &:focus {
+        outline: none;
+        background: rgba(160, 195, 255, 0.1);
+        border: 1px solid #116ACC;
+    }
+}
+
+.currency-exchange__select-container {
+    position: relative;
+    width: 134px;
+    margin-right: auto;
+    user-select: none;
+}
+
+.currency-exchange__option-current,
+.currency-exchange__option {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #374151;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.currency-exchange__option {
+    position: relative;
+
+    &:hover {
+        background-color: #A0C3FF;
+    }
+
+    &:focus {
+        background-color: #06478c;
+        color: #FFFFFF;
+    }
+}
+
+.currency-exchange__option--active::after {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    content: '';
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../../images/selectMark.svg');
+}
+
+.currency-exchange__option-current {
+    position: relative;
+    background-color: #FFFFFF;
+    border: 1px solid #9CA3AF;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: rgba(160, 195, 255, 0.05);
+        border: 1px solid #116ACC;
+    }
+
+    &:focus {
+        background-color: rgba(160, 195, 255, 0.1);
+        border: 1px solid #116ACC;
+    }
+}
+
+.currency-exchange__option-current::after {
+    position: absolute;
+    top: 19.5px;
+    right: 23px;
+    content: '';
+    display: block;
+    width: 10px;
+    height: 5px;
+    background-image: url('../../images/selectArrow.svg');
+    background-position: center center;
+}
+
+.currency-exchange__option-current--active::after {
+    transform: rotate(180deg);
+}
+
+@keyframes containerAnimation {
+    from {
+        transform: scale(1, 0);
+        z-index: 10;
+    }
+
+    to {
+        transform: scale(1, 1);
+        z-index: 10;
+    }
+}
+
+.currency-exchange__options-container {
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+    display: none;
+    position: absolute;
+    top: 48px;
+    z-index: 10;
+    width: 134px;
+    padding: 10px 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    max-height: 180px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    &--active {
+        display: block;
+    }
+}
+
+.currency-exchange__button {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    padding: 47px 13px;
+    background-color: #116ACC;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #5394d9;
+    }
+
+    &:focus {
+        background-color: #06478c;
+    }
+
+    @media (max-width: 900px) {
+        padding: 15px;
+    }
+}

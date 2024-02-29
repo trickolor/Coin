@@ -1,0 +1,248 @@
+@keyframes containerAnimation {
+  from {
+    transform: scale(1, 0);
+    z-index: 10;
+  }
+
+  to {
+    transform: scale(1, 1);
+    z-index: 10;
+  }
+}
+
+.transaction-history__container,
+.transaction-history__container--advanced {
+  animation-name: containerAnimation;
+  animation-duration: 0.3s;
+  flex-basis: 100%;
+  position: relative;
+  padding: 25px 50px 66px 50px;
+  background-color: #F3F4F6;
+  border-radius: 56px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &--advanced {
+    flex-basis: 100%;
+    width: 1240px;
+    padding: 25px 50px 66px 50px;
+    background-color: #F3F4F6;
+    border-radius: 56px;
+    cursor: auto;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 668px;
+
+    .transaction-history__list-item-value,
+    .transaction-history__list-category {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    max-width: 500px;
+    padding: 25px 38px 66px 38px;
+
+    .transaction-history__title {
+      margin: 0 auto 20px;
+    }
+
+    .transaction-history__list-item {
+      justify-content: center;
+      gap: 15px;
+      padding: 20px 0;
+    }
+
+    .transaction-history__list-header {
+      justify-content: center;
+      gap: 50px;
+      padding: 20px 50px;
+
+      &:nth-child(3) {
+        color: #000000;
+      }
+    }
+
+    .transaction-history__list-item-value,
+    .transaction-history__list-category {
+      width: auto;
+    }
+  }
+
+  @media (max-width: 650px) {
+    max-width: 320px;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+
+    .transaction-history__list-item-value,
+    .transaction-history__list-category {
+      font-size: 8px;
+      line-height: 8px;
+    }
+
+    .transaction-history__list-header {
+      width: 320px;
+      padding: 20px 0;
+      border-radius: 0;
+    }
+
+    .transaction-history__title {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.transaction-history__title {
+  display: block;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  width: fit-content;
+  margin: 0;
+  margin-bottom: 25px;
+
+  @media (max-width: 1440px) {
+    text-align: center;
+  }
+}
+
+.transaction-history__list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: #116ACC;
+  border-radius: 15px;
+}
+
+.transaction-history__list-category {
+  display: block;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  width: 170px;
+  text-align: center;
+}
+
+.transaction-history__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-history__list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  border-bottom: 2px solid rgba(0, 82, 255, 0.1);
+}
+
+.transaction-history__list-item-value {
+  display: block;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #374151;
+  width: 170px;
+  text-align: center;
+
+  &-red {
+    color: #FD4E5D;
+  }
+
+  &-green {
+    color: #76CA66;
+  }
+
+  &--visa,
+  &--mir,
+  &--mastercard {
+    padding-right: 35px;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
+  &--visa {
+    background-image: url('../../images/visa.png');
+    background-size: 30px 30px;
+  }
+
+  &--mir {
+    background-image: url('../../images/mir.png');
+    background-size: 30px 18px;
+  }
+
+  &--mastercard {
+    background-image: url('../../images/mastercard.png');
+    background-size: 30px 25px;
+  }
+}
+
+.transaction-history__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  gap: 20px;
+}
+
+.transaction-history__prev,
+.transaction-history__next {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  padding: 15px;
+  background-color: #116ACC;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  background-image: url('../../images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 25px 25px;
+
+  &:hover {
+    background-color: #5394d9;
+  }
+
+  &:focus {
+    background-color: #06478c;
+  }
+}
+
+.transaction-history__prev {
+  transform: rotate(-180deg);
+}
+
+.transaction-history__nav-pages {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #374151;
+}

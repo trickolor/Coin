@@ -1,0 +1,341 @@
+@keyframes containerAnimation {
+  from {
+    transform: scale(1, 0);
+    z-index: 10;
+  }
+
+  to {
+    transform: scale(1, 1);
+    z-index: 10;
+  }
+}
+
+.chart__container {
+  animation-name: containerAnimation;
+  animation-duration: 0.3s;
+  display: flex;
+  position: relative;
+  gap: 25px;
+  padding: 25px 50px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  max-width: 584px;
+  cursor: pointer;
+
+  &--extended {
+    padding: 25px 100px;
+    gap: 46px;
+    max-width: none;
+    cursor: auto;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 25px 92px;
+
+    &--extended {
+      padding: 25px 70px;
+      max-width: 768px;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 25px 50px;
+    max-width: 476px;
+    gap: 10px;
+
+    &--extended {
+      padding: 25px 50px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    border-radius: 0;
+    padding: 25px 60px;
+    max-width: 280px;
+    gap: 10px;
+
+    &--extended {
+      border-radius: 0;
+      padding: 25px 50px;
+      max-width: 280px;
+      gap: 10px;
+    }
+  }
+}
+
+.chart__grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+  padding: 0 35px;
+  outline: 1px solid #000000;
+
+  &--extended {
+    padding: 0 46px;
+  }
+}
+
+.chart__bar,
+.chart__advanced-bar,
+.chart__loss-bar,
+.chart__profit-bar,
+.chart__neutral-bar {
+  position: relative;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.chart__profit-bar--secondary,
+.chart__loss-bar--secondary {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+.chart__bar {
+  background-color: #116ACC;
+}
+
+.chart__profit-bar {
+  background-color: #76CA66;
+}
+
+.chart__loss-bar {
+  background-color: #FD4E5D;
+}
+
+.chart__neutral-bar {
+  background-color: #CDAA6E;
+}
+
+.chart__x-scale {
+  display: flex;
+  gap: 28px;
+  padding: 10px 35px 0 35px;
+
+  &--extended {
+    padding: 0 46px;
+  }
+}
+
+.chart__category {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  text-align: center;
+  width: 50px;
+
+  &--extended {
+    font-size: 16px;
+    width: 180px;
+  }
+}
+
+.chart__y-scale {
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  padding-bottom: 33px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 165px;
+
+  &--extended {
+    padding-bottom: 23px;
+  }
+
+  @media (max-width: 650px) {
+    height: 100px;
+    padding-bottom: 15px;
+    ;
+  }
+}
+
+.chart__max-point,
+.chart__min-point,
+.chart__medium-point {
+  font-family: 'Work Sans';
+  font-style: normal;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+
+  @media (max-width: 650px) {
+    font-size: 8px;
+  }
+}
+
+.chart__medium-point {
+  position: absolute;
+}
+
+.chart__title {
+  display: block;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 1440px) {
+  .chart__grid--extended {
+    gap: 20px;
+    padding: 0 20px;
+    width: fit-content;
+  }
+
+  .chart__x-scale--extended {
+    gap: 20px;
+    padding: 0 20px;
+    width: fit-content;
+
+    >.chart__category {
+      font-size: 10px;
+      width: 25px;
+    }
+  }
+
+  .chart__grid--extended>.chart__bar,
+  .chart__advanced-bar,
+  .chart__profit-bar,
+  .chart__neutral-bar,
+  .chart__loss-bar {
+    width: 25px;
+  }
+
+  .chart__min-value,
+  .chart__max-value,
+  .chart__medium-value {
+    font-size: 10px;
+  }
+
+  .chart__container--extended>.chart__left-half {
+    max-width: fit-content;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .chart__grid--extended,
+  .chart__grid {
+    gap: 10px;
+    padding: 0 10px;
+    width: fit-content;
+  }
+
+  .chart__x-scale--extended,
+  .chart__x-scale {
+    gap: 10px;
+    padding: 0 10px;
+    width: fit-content;
+  }
+
+  .chart__y-scale {
+    padding-bottom: 23px;
+    max-width: 27px;
+  }
+
+  .chart__x-scale--extended>.chart__category {
+    font-size: 10px;
+    line-height: 10px;
+    width: 25px;
+  }
+
+  .chart__grid--extended>.chart__bar,
+  .chart__advanced-bar,
+  .chart__profit-bar,
+  .chart__neutral-bar,
+  .chart__loss-bar {
+    width: 25px;
+  }
+
+  .chart__min-value,
+  .chart__max-value,
+  .chart__medium-value {
+    font-size: 10px;
+  }
+
+  .chart__container--extended>.chart__left-half {
+    max-width: fit-content;
+  }
+
+  .chart__container--extended>.chart__y-scale {
+    padding-bottom: 13px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .chart__grid--extended,
+  .chart__grid {
+    gap: 5px;
+    padding: 0 5px;
+    width: fit-content;
+  }
+
+  .chart__x-scale--extended,
+  .chart__x-scale {
+    gap: 5px;
+    padding: 0 5px;
+    width: fit-content;
+    padding-top: 5px;
+  }
+
+  .chart__x-scale--extended>.chart__category {
+    font-size: 6px;
+    line-height: 6px;
+    width: 10px;
+  }
+
+  .chart__container--extended .chart__title {
+    font-size: 16px;
+    width: 180px;
+  }
+
+  .chart__bar {
+    width: 20px;
+  }
+
+  .chart__category {
+    font-size: 10px;
+    line-height: 10px;
+    width: 20px;
+  }
+
+  .chart__y-scale {
+    padding-bottom: 18px;
+  }
+
+  .chart__grid--extended>.chart__bar,
+  .chart__advanced-bar,
+  .chart__profit-bar,
+  .chart__neutral-bar,
+  .chart__loss-bar {
+    width: 10px;
+  }
+
+  .chart__min-value,
+  .chart__max-value,
+  .chart__medium-value {
+    font-size: 8px;
+    line-height: 8px;
+  }
+
+  .chart__container--extended>.chart__left-half {
+    max-width: fit-content;
+  }
+}

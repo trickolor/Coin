@@ -1,0 +1,95 @@
+@keyframes containerAnimation {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.account-class__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 356px;
+    padding: 22px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    animation: containerAnimation 0.3s;
+}
+
+.account-class__number {
+    display: block;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    color: #182233;
+    margin-bottom: 9px;
+}
+
+.account-class__balance {
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #182233;
+    margin-bottom: 31px;
+}
+
+.account-class__date-title,
+.account-class__date {
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.account-class__date {
+    font-weight: 400;
+}
+
+.account-class__button {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    display: block;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    width: fit-content;
+    padding: 16px 24px;
+    background-color: #116ACC;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #5394d9;
+    }
+
+    &:focus {
+        background-color: #06478c;
+    }
+}
+
+@media (max-width: 450px) {
+    .account-class__container {
+        max-width: 280px;
+        padding: 10px;
+    }
+
+    .account-class__button {
+        font-size: 12px;
+        padding: 10px 18px;
+        bottom: 10px;
+    }
+}

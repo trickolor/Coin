@@ -1,0 +1,228 @@
+@keyframes headerAnimation {
+    from {
+        bottom: 110px;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes containerAnimation {
+    from {
+        transform: scale(0, 1);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.header {
+    animation-name: headerAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    position: relative;
+    background-color: #116ACC;
+}
+
+.header__container {
+    display: flex;
+    padding: 25px 0;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+.header__logo {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    user-select: none;
+}
+
+.header__menu {
+    display: flex;
+    gap: 25px;
+    animation-name: containerAnimation;
+    animation-duration: 0.3s;
+}
+
+.header__menu-item,
+.header__menu-item-adaptive {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #116ACC;
+    background-color: #FFFFFF;
+    border: 2px solid #116ACC;
+    border-radius: 7px;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__menu-item:hover {
+    background-color: #c4d7eb;
+}
+
+.header__menu-item:focus {
+    background-color: #A0C3FF;
+}
+
+.header__menu-item--active {
+    background-color: #A0C3FF;
+}
+
+.header__menu-button {
+    width: 36px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.header__menu-button-line {
+    height: 5px;
+    width: 36px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__menu-cross {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-image: url('../../images/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__menu-cross:hover {
+    transform: scale(1, 1.05);
+}
+
+.header__menu-button:hover .header__menu-button-line-2 {
+    width: 27px;
+    margin-left: 9px;
+}
+
+.header__menu-button:hover .header__menu-button-line-3 {
+    width: 15px;
+    margin-left: 21px;
+}
+
+.header__menu-adaptive {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    padding: 104px 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #FFFFFF;
+    align-items: center;
+}
+
+.header__menu-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.25);
+}
+
+@keyframes closingAnimation {
+    from {
+        right: 0;
+    }
+
+    to {
+        left: -200px
+    }
+}
+
+.header__menu-adaptive--closing {
+    animation-name: closingAnimation;
+    animation-duration: 0.3s;
+}
+
+@keyframes adaptiveAnimation {
+    from {
+        right: -200px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+.header__menu-adaptive--active {
+    animation-name: adaptiveAnimation;
+    animation-duration: 0.3s;
+    display: flex;
+}
+
+.header__menu-item-adaptive {
+    padding: 20px 0;
+    width: 200px;
+    border: none;
+}
+
+.header__menu-item-adaptive:hover {
+    background-color: #116ACC;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1440px) {
+    .header__container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header__container {
+        max-width: 576px;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__menu-button {
+        display: flex;
+    }
+}
+
+@media (max-width: 650px) {
+    .header__container {
+        justify-content: space-around;
+    
+    }
+}
