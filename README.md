@@ -1,6 +1,6 @@
 # Coin
 
-Coin is an internet bank prototype supporting cryptocurrency, transactions, transaction history, graphical statistics, currency exchange, and exchange rate tracking. It is developed using Webpack SSR Redux setup with React, Node+Express.js, Nodemon, Typescript, GSAP (a personally developed component for animations), and Redux-Persist.
+Coin is a prototype internet bank supporting cryptocurrency, transactions, transaction history, graphical statistics, currency exchange, and tracking of exchange rate changes. It is developed using Webpack setup with SCSS preprocessor, Web-Socket, JS modules, and libraries, as well as adaptive web design
 
 ## Backend for the "Coin" Project
 
